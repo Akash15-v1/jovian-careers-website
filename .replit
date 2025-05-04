@@ -1,18 +1,9 @@
-run = "python app.py"
+language = "python3"
+run = "python3 app.py"
+modules = ["python-3.11"]
+
 [nix]
-channel = "stable-24_05"
 
-[deployment]
-run = ["sh", "-c", "python app.py"]
-
-[workflows]
-runButton = "Python"
-
-[[workflows.workflow]]
-name = "Python"
-author = 42252010
-mode = "sequential"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python3 app.py"
+[[ports]]
+localPort = 5000
+externalPort = 80
